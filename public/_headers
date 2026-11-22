@@ -1,0 +1,13 @@
+# Cloudflare Pages; without these the browser revalidates model and WASM on every visit.
+
+# Content-hashed names, so `immutable` is safe.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Not hashed: 30 days covers return visits without pinning an old model for a year.
+/mediapipe/*
+  Cache-Control: public, max-age=2592000
+
+# Never cache the entry document, or a deploy has no effect.
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate

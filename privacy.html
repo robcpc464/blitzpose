@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f9fc" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Datenschutz · BlitzPose</title>
+    <link rel="stylesheet" href="/src/app.css" />
+  </head>
+  <!--
+    Public build only (`npm run deploy`).
+    Update this text when storage keys, network access or hosting change.
+  -->
+  <body>
+    <main class="mx-auto flex min-h-dvh w-full max-w-3xl flex-col gap-8 px-4 py-5 sm:px-6 sm:py-10">
+      <header class="flex items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-3">
+          <span class="ink grid size-10 shrink-0 place-items-center rounded-xl">
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg>
+          </span>
+          <span class="text-lg font-semibold tracking-tight">Blitz<span class="text-fg-2">Pose</span></span>
+        </a>
+        <a href="/" class="glass flex h-11 items-center rounded-full px-4 text-sm font-medium text-fg-2 transition hover:text-fg">Zur App</a>
+      </header>
+
+      <article
+        class="glass rounded-3xl p-6 sm:p-10 [&_a]:underline [&_a]:underline-offset-2 [&_h1]:text-3xl [&_h1]:font-semibold
+               [&_h1]:tracking-tight [&_h2]:mt-8 [&_h2]:text-lg [&_h2]:font-semibold [&_h2]:tracking-tight [&_li]:mt-1
+               [&_p]:mt-2 [&_p]:leading-relaxed [&_p]:text-fg-2 [&_ul]:mt-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:text-fg-2"
+      >
+        <h1>Datenschutzerklärung</h1>
+
+        <h2>Das Wichtigste vorweg</h2>
+        <p>
+          BlitzPose läuft vollständig in Ihrem Browser. Kamerabild und Fotos werden ausschließlich
+          auf Ihrem Gerät verarbeitet und nie an uns oder an Dritte übertragen. Es gibt kein Konto,
+          kein Tracking, keine Webanalyse, keine Werbung und keine eingebundenen Inhalte fremder
+          Anbieter. Eine Sicherheitsregel im Browser (Content Security Policy) verbietet der App
+          technisch jede Verbindung zu anderen Servern.
+        </p>
+
+        <h2>1. Verantwortlicher</h2>
+        <p>
+          Robin Spiecker<br />
+          c/o Impressumservice Dein-Impressum<br />
+          Stettiner Str. 41<br />
+          35410 Hungen<br />
+          Deutschland
+        </p>
+        <p>
+          Telefon: +49 211 58008554<br />
+          E-Mail: <a href="mailto:website@spiecker.eu">website@spiecker.eu</a>
+        </p>
+
+        <h2>2. Kamera und Fotos</h2>
+        <p>
+          Auf die Kamera greift die App erst zu, wenn Sie das in Ihrem Browser erlauben. Das
+          Kamerabild wird im Arbeitsspeicher Ihres Geräts verarbeitet: Die Gesichtserkennung und das
+          Freistellen für einen neuen Hintergrund sind Modelle, die als Dateien mit der App
+          ausgeliefert werden und auf Ihrem Gerät rechnen. Aufnahmen liegen nur im Arbeitsspeicher
+          und sind mit dem Schließen oder Neuladen der Seite verworfen. Was Sie herunterladen,
+          speichert Ihr Browser dort, wo Sie es ablegen. Wir erhalten von alldem nichts.
+        </p>
+
+        <h2>3. Coaching-Stimme</h2>
+        <p>
+          Die gesprochenen Anweisungen liegen der App als Audiodateien bei. Nichts von dem, was Sie
+          sagen oder tun, geht an einen Sprachdienst. Nur falls eine Aufnahme fehlt, nutzt die App
+          die Sprachausgabe Ihres Browsers und bevorzugt dabei Stimmen, die auf Ihrem Gerät laufen.
+          Bietet Ihr Browser ausschließlich Online-Stimmen an, kann er den Text der Anweisung (nie
+          ein Bild) an den Sprachdienst seines Herstellers senden.
+        </p>
+
+        <h2>4. Lokale Speicherung im Browser</h2>
+        <p>
+          Die App merkt sich im lokalen Speicher Ihres Browsers (Local Storage) Ihre Einstellungen:
+          Sprache, Stummschaltung der Stimme, abgewählte Prüfpunkte und die Einstellungen der
+          Nachbearbeitung. Diese Werte verlassen Ihr Gerät nicht und dienen nur dazu, dass Sie
+          dieselbe Einstellung nicht bei jedem Besuch erneut vornehmen müssen. Wer den versteckten
+          Messmodus für die Entwicklung öffnet (<code>?record</code>), speichert dort zusätzlich die
+          aufgezeichneten Messwerte; auch sie bleiben auf dem Gerät. Die Speicherung ist
+          für den von Ihnen gewünschten Dienst erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Sie können
+          die Werte jederzeit über die Einstellungen Ihres Browsers löschen.
+        </p>
+
+        <h2>5. Hosting und Zugriffsdaten (Cloudflare)</h2>
+        <p>
+          Die App wird über Cloudflare Pages gehostet und über das Content Delivery Network von
+          Cloudflare ausgeliefert. Anbieter ist die Cloudflare, Inc., 101 Townsend Street, San
+          Francisco, CA 94107, USA.
+        </p>
+        <p>
+          Beim Aufruf übermittelt Ihr Browser automatisch technische Daten, die Cloudflare in
+          unserem Auftrag verarbeitet:
+        </p>
+        <ul>
+          <li>IP-Adresse des zugreifenden Geräts</li>
+          <li>Datum und Uhrzeit des Zugriffs</li>
+          <li>angeforderte Datei</li>
+          <li>übertragene Datenmenge</li>
+          <li>zuvor besuchte Seite (Referrer), sofern übermittelt</li>
+          <li>Browsertyp und -version sowie Betriebssystem</li>
+        </ul>
+        <p>
+          Diese Daten dienen ausschließlich der technisch fehlerfreien Bereitstellung, der
+          Stabilität und der Sicherheit, etwa der Abwehr von Angriffen. Sie werden nicht mit anderen
+          Daten zusammengeführt und nicht zu Analysezwecken ausgewertet; Cloudflare Web Analytics
+          oder andere Analysewerkzeuge setzen wir nicht ein. Bilder sind darin nicht enthalten, denn
+          die App überträgt keine.
+        </p>
+        <p>
+          Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt in der
+          sicheren und effizienten Bereitstellung der App. Mit Cloudflare besteht ein Vertrag zur
+          Auftragsverarbeitung nach Art. 28 DSGVO.
+        </p>
+        <p>
+          Da Cloudflare seinen Sitz in den USA hat, kann es zu einer Verarbeitung in einem
+          Drittland kommen. Cloudflare ist unter dem EU-US Data Privacy Framework zertifiziert; für
+          die USA besteht insoweit ein Angemessenheitsbeschluss der EU-Kommission. Ergänzend hat
+          Cloudflare die Standardvertragsklauseln der EU-Kommission nach Art. 46 Abs. 2 lit. c DSGVO
+          abgeschlossen.
+        </p>
+        <p>
+          Die Zugriffsdaten werden nur so lange gespeichert, wie es für die genannten Zwecke
+          erforderlich ist, und anschließend gelöscht oder anonymisiert.
+        </p>
+
+        <h2>6. Cookies</h2>
+        <p>
+          Die App selbst setzt keine Cookies. Zum Schutz vor Bots und Angriffen kann Cloudflare in
+          bestimmten Fällen den technisch notwendigen Sicherheits-Cookie „cf_clearance“ setzen. Er
+          hat eine begrenzte Gültigkeitsdauer und dient ausschließlich der Absicherung. Seine
+          Speicherung ist nach § 25 Abs. 2 Nr. 2 TDDDG einwilligungsfrei; die Verarbeitung beruht
+          auf Art. 6 Abs. 1 lit. f DSGVO.
+        </p>
+
+        <h2>7. Kontaktaufnahme</h2>
+        <p>
+          Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben, um Ihr
+          Anliegen zu bearbeiten (Art. 6 Abs. 1 lit. b oder f DSGVO), und löschen sie, sobald es
+          erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+        </p>
+
+        <h2>8. Ihre Rechte</h2>
+        <p>
+          Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung
+          (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und
+          Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21). Wenden
+          Sie sich dafür an die oben genannte Adresse. Außerdem können Sie sich bei einer
+          Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO).
+        </p>
+
+        <h2>Stand</h2>
+        <p>November 2026</p>
+      </article>
+
+      <footer class="flex gap-5 px-1 text-xs text-fg-2">
+        <a href="/imprint.html" class="hover:text-fg">Impressum</a>
+        <a href="/privacy.html" class="hover:text-fg">Datenschutz</a>
+      </footer>
+    </main>
+  </body>
+</html>

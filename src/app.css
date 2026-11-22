@@ -1,0 +1,152 @@
+@import "@fontsource-variable/inter";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+
+  --color-surface: #f3f5f9;
+  --color-elevated: #ffffff;
+  --color-fg: #0e141b;
+  --color-fg-2: #4b5664;
+
+  /* States only; a shade darker than usual so icons keep contrast on light backgrounds. */
+  --color-ok: #047857;
+  --color-warn: #b45309;
+  --color-bad: #be123c;
+  /* The same states on the dark camera stage. */
+  --color-ok-bright: #34d399;
+  --color-bad-bright: #fb7185;
+}
+
+:root {
+  color-scheme: light;
+  /* `clip`, not `hidden`: `hidden` creates a scroll container and breaks `fixed` and `sticky`. */
+  overflow-x: clip;
+}
+
+/* Frosted glass needs something behind it to blur. */
+body {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
+  background-color: var(--color-surface);
+  color: var(--color-fg);
+  background-image:
+    radial-gradient(60rem 40rem at 10% -10%, rgb(186 205 255 / 0.55), transparent 70%),
+    radial-gradient(50rem 40rem at 105% 30%, rgb(214 196 255 / 0.4), transparent 70%),
+    radial-gradient(60rem 45rem at 40% 110%, rgb(178 232 224 / 0.45), transparent 70%),
+    linear-gradient(180deg, #f8f9fc, var(--color-surface));
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+@utility glass {
+  background-color: rgb(255 255 255 / 0.45);
+  backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgb(255 255 255 / 0.65);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.85),
+    0 1px 2px rgb(15 23 42 / 0.06),
+    0 24px 48px -28px rgb(15 23 42 / 0.4);
+}
+
+@utility ink {
+  background-color: var(--color-fg);
+  color: #fff;
+  box-shadow: 0 10px 24px -12px rgb(15 23 42 / 0.55);
+}
+
+/* Tailwind 4 no longer sets `cursor: pointer` on buttons. */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+@utility btn-primary {
+  @apply ink touch-manipulation rounded-full text-sm font-semibold transition hover:bg-slate-700
+    active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2
+    focus-visible:outline-fg disabled:opacity-40 disabled:hover:bg-fg;
+}
+
+@utility btn-icon {
+  @apply glass grid touch-manipulation place-items-center rounded-full text-fg-2 transition
+    enabled:hover:bg-white/75 enabled:hover:text-fg active:scale-95 focus-visible:outline-2
+    focus-visible:outline-offset-2 focus-visible:outline-fg aria-pressed:bg-fg
+    aria-pressed:text-white disabled:opacity-35;
+}
+
+/* Native tooltips are slow and unstyled. Visual only; `aria-label` stays alongside. */
+[data-tip] {
+  position: relative;
+}
+
+[data-tip]::after {
+  /* Separate variables so alignment and direction don't override each other's translate. */
+  --tip-x: -50%;
+  --tip-y: 0.25rem;
+
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  /* Below dialogs (z-30). */
+  z-index: 20;
+  width: max-content;
+  max-width: 13rem;
+  padding: 0.4rem 0.625rem;
+  border-radius: 0.625rem;
+  background-color: var(--color-elevated);
+  box-shadow:
+    0 0 0 1px rgb(15 23 42 / 0.08),
+    0 12px 30px -12px rgb(15 23 42 / 0.45);
+  color: var(--color-fg);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+  white-space: pre-line;
+  pointer-events: none;
+  opacity: 0;
+  translate: var(--tip-x) var(--tip-y);
+  transition:
+    opacity 140ms ease,
+    translate 140ms ease;
+}
+
+[data-tip-align='start']::after {
+  --tip-x: 0;
+  left: 0;
+}
+
+[data-tip-align='end']::after {
+  --tip-x: 0;
+  left: auto;
+  right: 0;
+}
+
+[data-tip-below]::after {
+  --tip-y: -0.25rem;
+  top: calc(100% + 0.5rem);
+  bottom: auto;
+}
+
+[data-tip]:hover::after,
+[data-tip]:focus-visible::after {
+  --tip-y: 0;
+  opacity: 1;
+}
+
+/* Without the iteration count, infinite animations would loop every 0.01 ms and strobe. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
